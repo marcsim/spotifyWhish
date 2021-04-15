@@ -1,4 +1,7 @@
-import { BaseEntity, Entity } from 'typeorm';
+import { BaseEntity, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Album extends BaseEntity {}
+export class Album extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+}

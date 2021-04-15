@@ -6,7 +6,7 @@ export const typeormConfig: TypeOrmModuleOptions = {
   port: 5432,
   username: '',
   password: '',
-  database: 'spotifyWish',
+  database: 'spotifyWishdb',
   autoLoadEntities: true,
   synchronize: true,
 };
