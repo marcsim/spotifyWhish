@@ -1,6 +1,12 @@
 import { Album } from 'src/Album/models/album.entity';
 import { Artist } from 'src/Artist/models/artist.entity';
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Song extends BaseEntity {
@@ -10,8 +16,8 @@ export class Song extends BaseEntity {
   title: string;
   @Column()
   duration: number;
-  /*@Column()
+  @ManyToMany(() => Album, (album) => album.songList)
   albumList: Album[];
-  @Column()
-  artistList: Artist[];*/
+  @ManyToMany(() => Artist, (artist) => artist.songList)
+  artistList: Artist[];
 }

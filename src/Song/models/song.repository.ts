@@ -1,3 +1,5 @@
+import { Album } from 'src/Album/models/album.entity';
+import { Artist } from 'src/Artist/models/artist.entity';
 import { EntityRepository, Repository } from 'typeorm';
 import { AddSongDTO } from '../dto/add-song.dto';
 import { UpdateSongDTO } from '../dto/update-song.dto';
@@ -5,11 +7,21 @@ import { Song } from './song.entity';
 
 @EntityRepository(Song)
 export class SongRepository extends Repository<Song> {
-  async createSong(addSongDTO: AddSongDTO): Promise<Song> {
+  async createSong(
+    addSongDTO: AddSongDTO,
+    albumListTmp?: Album[],
+    artistListTmp?: Artist[],
+  ): Promise<Song> {
     const { title, duration } = addSongDTO;
     const song = new Song();
     song.title = title;
     song.duration = duration;
+    if (albumListTmp) {
+      song.albumList = albumListTmp;
+    }
+    if (artistListTmp) {
+      song.artistList = artistListTmp;
+    }
     return await song.save();
   }
 

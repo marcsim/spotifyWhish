@@ -27,11 +27,16 @@ export class SongController {
   }
 
   @Get()
+  async getSongByName(@Body('title') title: string): Promise<Song> {
+    return this.SongService.getSongByName(title);
+  }
+
+  @Get()
   async getAllSongs() {
     return this.SongService.getAllSongs();
   }
 
-  @Delete(':id')
+  @Delete('/:id')
   async deleteSongById(@Param() params) {
     return this.SongService.deleteSongById(params.id);
   }

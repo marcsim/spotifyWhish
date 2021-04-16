@@ -1,6 +1,12 @@
 import { Album } from 'src/Album/models/album.entity';
 import { Song } from 'src/Song/models/song.entity';
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
 export class Artist extends BaseEntity {
@@ -10,8 +16,8 @@ export class Artist extends BaseEntity {
   name: string;
   @Column()
   isBand: boolean;
-  /*@Column()
+  @ManyToMany(() => Album, (album) => album.artistList)
   albumList: Album[];
-  @Column()
-  songList: Song[];*/
+  @ManyToMany(() => Song, (song) => song.artistList)
+  songList: Song[];
 }

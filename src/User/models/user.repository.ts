@@ -2,6 +2,7 @@ import { EntityRepository, Repository } from 'typeorm';
 import { AddUserDTO } from '../dto/add-user.dto';
 import { UpdateUserDTO } from '../dto/update-user.dto';
 import { User } from './user.entity';
+import * as bcrypt from 'bcrypt';
 
 @EntityRepository(User)
 export class UserRepository extends Repository<User> {
@@ -9,7 +10,9 @@ export class UserRepository extends Repository<User> {
     const { mail, password } = addUserDTO;
     const user = new User();
     user.mail = mail;
-    user.password = password;
+    const saltOrRounds = 10;
+    const hash = await bcrypt.hash(password, saltOrRounds);
+    user.password = hash;
     return await user.save();
   }
 
