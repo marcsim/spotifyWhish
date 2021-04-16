@@ -1,0 +1,555 @@
+{
+	"info": {
+		"_postman_id": "1997662a-c249-48c2-b769-f372a4e3e8f2",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "artist",
+			"item": [
+				{
+					"name": "postArtist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "SCH",
+									"type": "text"
+								},
+								{
+									"key": "isBand",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/Artist/addArtist",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Artist",
+								"addArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneArtist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Artist/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Artist",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllArtist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneArtist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Artist/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Artist",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOneArtist",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "sch",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/Artist/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Artist",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "album",
+			"item": [
+				{
+					"name": "postAlbum",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Album 1",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2019",
+									"type": "text"
+								},
+								{
+									"key": "cover",
+									"value": "image d'album 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/Album/addAlbum",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Album",
+								"addAlbum"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneAlbum",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Album/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Album",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllAlbum",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Album",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneAlbum",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Album/7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Album",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mail",
+									"value": "mail1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "motdepasse2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/User/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"User",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1haWwxQGV4YW1wbGUxLmZyIiwiaWQiOjEsImlhdCI6MTYxODU3NTUwNiwiZXhwIjoxNjE4NTc5MTA2fQ.Gb2xBXQ94KT_3A1KSLtzMiT4getHshTBF86xg09Seus",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/User/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"User",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/User",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/User/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"User",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOneUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "motdepasse",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/User/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"User",
+								"1"
+							],
+							"query": [
+								{
+									"key": "password",
+									"value": "motdepasse",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mail",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/User/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"User",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "song",
+			"item": [
+				{
+					"name": "postSong",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Journal Perso II",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "400",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/Song/addSong",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Song",
+								"addSong"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOneSong",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSong",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Song/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Song",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOneSong",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/Song/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Song",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOneSong",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "duration",
+									"value": "300",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/Song/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"Song",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSongByName",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "song 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/song",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"song"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "song2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
