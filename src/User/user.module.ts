@@ -2,8 +2,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { UserController } from './user.controller';
 import { UserService } from './user.service';
-import { UserRepository } from './models/user.repository';
-import { JwtStrategy } from './jwt.strategy';
+import { UserRepository } from './repository/user.repository';
+import { JwtStrategy } from '../config/jwt.strategy';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 

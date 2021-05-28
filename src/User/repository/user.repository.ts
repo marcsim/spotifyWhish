@@ -1,7 +1,7 @@
 import { EntityRepository, Repository } from 'typeorm';
 import { AddUserDTO } from '../dto/add-user.dto';
 import { UpdateUserDTO } from '../dto/update-user.dto';
-import { User } from './user.entity';
+import { User } from '../models/user.entity';
 import * as bcrypt from 'bcrypt';
 
 @EntityRepository(User)

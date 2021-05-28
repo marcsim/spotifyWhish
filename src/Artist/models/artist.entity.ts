@@ -1,5 +1,5 @@
-import { Album } from 'src/Album/models/album.entity';
-import { Song } from 'src/Song/models/song.entity';
+import { Album } from 'src/album/models/album.entity';
+import { Song } from 'src/song/models/song.entity';
 import {
   BaseEntity,
   Column,
@@ -16,8 +16,8 @@ export class Artist extends BaseEntity {
   name: string;
   @Column()
   isBand: boolean;
-  @ManyToMany(() => Album, (album) => album.artistList)
-  albumList: Album[];
-  @ManyToMany(() => Song, (song) => song.artistList)
-  songList: Song[];
+  // @ManyToMany(() => Album, (album) => album.artistList)
+  // albumList: Album[];
+  // @ManyToMany(() => Song, (song) => song.artistList)
+  // songList: Song[];
 }

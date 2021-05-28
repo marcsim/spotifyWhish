@@ -31,12 +31,13 @@ export class ArtistController {
   async getAllArtists() {
     return this.ArtistService.getAllArtists();
   }
-
+  //TODO : seulement admin ou si user est l'artist en question
   @Delete(':id')
   async deleteArtistById(@Param() params) {
     return this.ArtistService.deleteArtistById(params.id);
   }
 
+  //TODO : seulement admin ou si user est l'artist en question
   @Patch('/:id')
   //@UsePipes(Validator)
   updateStatusById(

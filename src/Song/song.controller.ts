@@ -26,7 +26,7 @@ export class SongController {
     return this.SongService.getSongById(id);
   }
 
-  @Get()
+  @Get('/:name')
   async getSongByName(@Body('title') title: string): Promise<Song> {
     return this.SongService.getSongByName(title);
   }

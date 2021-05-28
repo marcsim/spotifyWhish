@@ -1,6 +1,6 @@
-import { Album } from 'src/Album/models/album.entity';
-import { Artist } from 'src/Artist/models/artist.entity';
-import { Song } from 'src/Song/models/song.entity';
+import { Album } from 'src/album/models/album.entity';
+import { Artist } from 'src/artist/models/artist.entity';
+import { Song } from 'src/song/models/song.entity';
 import {
   BaseEntity,
   Column,
@@ -24,6 +24,7 @@ export class User extends BaseEntity {
   @JoinColumn()
   artist: Artist;*/
 
+  //TODO : Relation : ManyToMany or OneToMany
   //Bibliothèque d'écoute
   /*@Column()
   songList: Song[];

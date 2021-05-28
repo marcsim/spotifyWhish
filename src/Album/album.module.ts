@@ -2,11 +2,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { AlbumController } from './album.controller';
 import { AlbumService } from './album.service';
-import { AlbumRepository } from './models/album.repository';
-import { SongService } from 'src/Song/song.service';
-import { SongRepository } from 'src/Song/models/song.repository';
-import { ArtistService } from 'src/Artist/artist.service';
-import { ArtistRepository } from 'src/Artist/models/artist.repository';
+import { AlbumRepository } from './repository/album.repository';
+import { SongService } from 'src/song/song.service';
+import { SongRepository } from 'src/song/repository/song.repository';
+import { ArtistService } from 'src/artist/artist.service';
+import { ArtistRepository } from 'src/artist/repository/artist.repository';
 
 @Module({
   imports: [

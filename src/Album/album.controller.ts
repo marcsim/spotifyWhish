@@ -32,11 +32,13 @@ export class AlbumController {
     return this.AlbumService.getAllAlbums();
   }
 
+  //Todo : active with admin or artist account
   @Delete(':id')
   async deleteAlbumById(@Param() params) {
     return this.AlbumService.deleteAlbumById(params.id);
   }
 
+  //Todo : active with admin or artist account
   @Patch('/:id')
   //@UsePipes(Validator)
   updateStatusById(

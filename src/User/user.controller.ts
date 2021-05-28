@@ -12,7 +12,7 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 import { AddUserDTO } from './dto/add-user.dto';
 import { UpdateUserDTO } from './dto/update-user.dto';
-import { AuthUser } from './get-user.decorator';
+import { AuthUser } from '../config/get-user.decorator';
 import { User } from './models/user.entity';
 import { UserService } from './user.service';
 
@@ -20,8 +20,8 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private UserService: UserService) {}
 
-  @Post('/signin')
-  async signIn(@Body() addUserDTO: AddUserDTO) {
+  @Post('/signup')
+  async signup(@Body() addUserDTO: AddUserDTO) {
     return this.UserService.createUser(addUserDTO);
   }
 

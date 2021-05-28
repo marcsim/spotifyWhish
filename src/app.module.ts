@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AlbumModule } from './Album/album.module';
-import { ArtistModule } from './Artist/artist.module';
+import { AlbumModule } from './album/album.module';
+import { ArtistModule } from './artist/artist.module';
 import { typeormConfig } from './config/typeorm.config';
-import { SongModule } from './Song/song.module';
-import { UserModule } from './User/user.module';
+import { SongModule } from './song/song.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [

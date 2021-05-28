@@ -1,9 +1,9 @@
-import { Album } from 'src/Album/models/album.entity';
-import { Artist } from 'src/Artist/models/artist.entity';
+import { Album } from 'src/album/models/album.entity';
+import { Artist } from 'src/artist/models/artist.entity';
 import { EntityRepository, Repository } from 'typeorm';
 import { AddSongDTO } from '../dto/add-song.dto';
 import { UpdateSongDTO } from '../dto/update-song.dto';
-import { Song } from './song.entity';
+import { Song } from '../models/song.entity';
 
 @EntityRepository(Song)
 export class SongRepository extends Repository<Song> {
@@ -16,12 +16,12 @@ export class SongRepository extends Repository<Song> {
     const song = new Song();
     song.title = title;
     song.duration = duration;
-    if (albumListTmp) {
-      song.albumList = albumListTmp;
-    }
-    if (artistListTmp) {
-      song.artistList = artistListTmp;
-    }
+    // if (albumListTmp) {
+    //   song.albumList = albumListTmp;
+    // }
+    // if (artistListTmp) {
+    //   song.artistList = artistListTmp;
+    // }
     return await song.save();
   }
 

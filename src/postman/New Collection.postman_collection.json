@@ -224,7 +224,7 @@
 			"name": "user",
 			"item": [
 				{
-					"name": "signin",
+					"name": "signup",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -247,14 +247,14 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:3000/User/signin",
+							"raw": "localhost:3000/User/signup",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"User",
-								"signin"
+								"signup"
 							]
 						}
 					},

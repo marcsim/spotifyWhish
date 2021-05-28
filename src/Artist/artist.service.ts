@@ -5,14 +5,14 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { AlbumService } from 'src/Album/album.service';
-import { Album } from 'src/Album/models/album.entity';
-import { Song } from 'src/Song/models/song.entity';
-import { SongService } from 'src/Song/song.service';
+import { AlbumService } from 'src/album/album.service';
+import { Album } from 'src/album/models/album.entity';
+import { Song } from 'src/song/models/song.entity';
+import { SongService } from 'src/song/song.service';
 import { AddArtistDTO } from './dto/add-artist.dto';
 import { UpdateArtistDTO } from './dto/update-artist.dto';
 import { Artist } from './models/artist.entity';
-import { ArtistRepository } from './models/artist.repository';
+import { ArtistRepository } from './repository/artist.repository';
 
 @Injectable()
 export class ArtistService {
@@ -26,31 +26,27 @@ export class ArtistService {
   ) {}
 
   async createArtist(addArtistDTO: AddArtistDTO) {
-    // eslint-disable-next-line prefer-const
-    let albumListTmp: Album[] = [];
-    // eslint-disable-next-line prefer-const
-    let songListTmp: Song[] = [];
-    if (addArtistDTO.albumList) {
-      for (const s of addArtistDTO.albumList) {
-        const found = await this.albumService.getAlbumByName(s.title);
-        if (await found) {
-          albumListTmp.push(await found);
-        }
-      }
-    }
-    if (addArtistDTO.songList) {
-      for (const s of addArtistDTO.songList) {
-        const found = await this.songService.getSongByName(s.title);
-        if (await found) {
-          songListTmp.push(await found);
-        }
-      }
-    }
-    return await this.artistRepository.createArtist(
-      addArtistDTO,
-      albumListTmp,
-      songListTmp,
-    );
+    // // eslint-disable-next-line prefer-const
+    // let albumListTmp: Album[] = [];
+    // // eslint-disable-next-line prefer-const
+    // let songListTmp: Song[] = [];
+    // if (addArtistDTO.albumList) {
+    //   for (const s of addArtistDTO.albumList) {
+    //     const found = await this.albumService.getAlbumByName(s.title);
+    //     if (await found) {
+    //       albumListTmp.push(await found);
+    //     }
+    //   }
+    // }
+    // if (addArtistDTO.songList) {
+    //   for (const s of addArtistDTO.songList) {
+    //     const found = await this.songService.getSongByName(s.title);
+    //     if (await found) {
+    //       songListTmp.push(await found);
+    //     }
+    //   }
+    // }
+    return await this.artistRepository.createArtist(addArtistDTO);
   }
 
   async getArtistById(id: number): Promise<Artist> {

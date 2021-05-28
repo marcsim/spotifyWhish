@@ -1,5 +1,5 @@
-import { Artist } from 'src/Artist/models/artist.entity';
-import { Song } from 'src/Song/models/song.entity';
+import { Artist } from 'src/artist/models/artist.entity';
+import { Song } from 'src/song/models/song.entity';
 import {
   BaseEntity,
   Column,
@@ -19,10 +19,10 @@ export class Album extends BaseEntity {
   year: string; //Todo date format
   @Column()
   cover: string; //Todo voir couverture image
-  @ManyToMany(() => Song, (song) => song.albumList)
-  @JoinTable()
-  songList: Song[];
-  @ManyToMany(() => Artist, (artist) => artist.albumList)
-  @JoinTable()
-  artistList: Artist[];
+  // @ManyToMany(() => Song, (song) => song.albumList)
+  // @JoinTable()
+  // songList: Song[];
+  // @ManyToMany(() => Artist, (artist) => artist.albumList)
+  // @JoinTable()
+  // artistList: Artist[];
 }
